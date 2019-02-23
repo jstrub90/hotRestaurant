@@ -44,15 +44,20 @@ app.get("/api/waitlist", function(req, res) {
 // Create New Reservations - takes in JSON input
 app.post("/api/reservations", function(req, res){
   var newReservation = req.body;
-  newReservation = newReservation.replace(/\s+/g, "").toLowerCase();
-  reservations.push(newReservation);
-  res.json(newReservation);
+  // newReservation = newReservation.replace(/\s+/g, "").toLowerCase();
+  if (reservations.length >= 5) {
+      waitlist.push(newReservation);
+  }
+  else {
+      reservations.push(newReservation);
+  }
+  res.json(reservations);
 });
 
 // Create New Waitlist - takes in JSON input
 app.post("/api/waitlist", function(req, res){
   var onWaitlist = req.body;
-  onWaitlist = onWaitlist.replace(/\s+/g, "").toLowerCase();
+  // onWaitlist = onWaitlist.replace(/\s+/g, "").toLowerCase();
   waitlist.push(onWaitlist);
   res.json(onWaitlist);
 })

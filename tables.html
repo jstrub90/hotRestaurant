@@ -35,7 +35,7 @@
 					<div class="panel-heading">
 						<h4 class="panel-title">Current Reservations</h4>
 					</div>
-					<div class="panel-body" id="htmlDiv">
+					<div class="panel-body" id="tablesSection">
 					</div>
 				</div>
 
@@ -68,7 +68,7 @@ let getTables = () => {
 			let htmlDiv = $("<div>");
 			htmlDiv.addClass('well');
 			htmlDiv.attr('id', 'tableWell-' + i+1)
-			$('#htmlDiv').append(htmlDiv);
+			$('#tablesSection').append(htmlDiv);
 
 			let tableNumber = i + 1;
 
@@ -82,12 +82,12 @@ let getWaitlist = () => {
 
 			let htmlDiv = $("<div>");
 			htmlDiv.addClass('well');
-			htmlDiv.attr('id', 'tableWell-' + i+1)
-			$('#htmlDiv').append(htmlDiv);
+			htmlDiv.attr('id', 'waitWell-' + i+1)
+			$('#waitlistSection').append(htmlDiv);
 
 			let tableNumber = i + 1;
 
-			$("#tableWell-"+ i+1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + data[i].name + " (" + data[i].id + ")</h2>");
+			$("#waitWell-"+ i+1).append('<h2><span class="label label-primary">' + tableNumber + "</span> | " + data[i].name + " (" + data[i].id + ")</h2>");
 		}
 	});
 }
