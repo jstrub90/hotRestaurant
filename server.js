@@ -65,8 +65,6 @@ app.post("/api/waitlist", function(req, res){
 app.post("/api/clear", function(req, res){
     reservations = [];
     waitlist = [];
-    res.json(reservations, waitlist);
-
 })
 
 
