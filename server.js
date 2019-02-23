@@ -41,6 +41,23 @@ app.get("/api/waitlist", function(req, res) {
   return res.json(waitlist);
 });
 
+// Create New Reservations - takes in JSON input
+app.post("/api/reservations", function(req, res){
+  var newReservation = req.body;
+  newReservation = newReservation.replace(/\s+/g, "").toLowerCase();
+  reservations.push(newReservation);
+  res.json(newReservation);
+});
+
+// Create New Waitlist - takes in JSON input
+app.post("/api/waitlist", function(req, res){
+  var onWaitlist = req.body;
+  onWaitlist = onWaitlist.replace(/\s+/g, "").toLowerCase();
+  waitlist.push(onWaitlist);
+  res.json(onWaitlist);
+})
+
+
 
 
 
