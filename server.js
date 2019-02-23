@@ -11,6 +11,9 @@ var PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Variables for JSON data
+var reservations = [];
+var waitlist = [];
 
 // Routes
 // =============================================================
@@ -27,6 +30,20 @@ app.get("/reserve", function(req, res) {
 app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
   });
+
+// Displays all reservations
+app.get("/api/reservations", function(req, res) {
+  return res.json(reservations);
+});
+
+// Displays all waitlist
+app.get("/api/waitlist", function(req, res) {
+  return res.json(waitlist);
+});
+
+
+
+
 
 
 // Starts the server to begin listening
