@@ -60,12 +60,17 @@ app.post("/api/waitlist", function(req, res){
   // onWaitlist = onWaitlist.replace(/\s+/g, "").toLowerCase();
   waitlist.push(onWaitlist);
   res.json(onWaitlist);
-})
+});
 
+// Deletes JSON data for tables and waitlist
 
+app.delete("/api/reservations", function(req, res){
+  reservations = [];
+});
 
-
-
+app.delete("/api/waitlist", function(req, res){
+  waitlist = [];
+});
 
 
 // Starts the server to begin listening
