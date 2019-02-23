@@ -59,7 +59,14 @@ app.post("/api/waitlist", function(req, res){
   var onWaitlist = req.body;
   // onWaitlist = onWaitlist.replace(/\s+/g, "").toLowerCase();
   waitlist.push(onWaitlist);
-  res.json(onWaitlist);
+  res.json(waitlist);
+})
+
+app.post("/api/clear", function(req, res){
+    reservations = [];
+    waitlist = [];
+    res.json(reservations, waitlist);
+
 })
 
 

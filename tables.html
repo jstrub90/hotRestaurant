@@ -94,6 +94,20 @@ let getWaitlist = () => {
 getTables();
 getWaitlist();
 
+$("#clear").on("click", function(){
+	$.post("/api/clear", function(data){
+		if(data){
+			alert("Your clear the tables.")
+		}
+		if(!data){
+			alert("Sorry, nothing happend.")
+		}
+
+	});
+	location.reload();
+
+})
+
 </script>
 
 </body>
